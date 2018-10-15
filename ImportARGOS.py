@@ -29,13 +29,23 @@ while lineString:
     if "Date :" in lineString:
         #Split the line string into a list
         lineList = lineString.split()#split by space
-        print(lineList)
+        #print(lineList)
 
         #Get attributes from first line
         tagID = lineList[0]
-        print(tagID)
+        #print(tagID)
         #print(lineString)
-        break #So it doesnt keep running
+        
+        #Get the next line
+        line2String = inputFileObj.readline()
+        line2Data = line2String.split()
+        #print(line2Data)
+
+        #Get attributes from second line
+        obsLat = line2Data[2]
+        obsLon = line2Data[5]
+        print(tagID, obsLat,obsLon)
+        #break #Add break to do it doesnt keep running when still testing out the codes
     
     #Get the next line
     lineString = inputFileObj.readline()
